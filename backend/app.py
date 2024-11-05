@@ -12,7 +12,11 @@ import os
 app = Flask(__name__)
 cors_origins = [os.getenv("FRONT_END_ORIGIN")]
 print(f"Allowed origins: {cors_origins}")
-CORS(app, origins=cors_origins)
+CORS(app, 
+     origins=cors_origins,
+     methods=["GET", "POST"], 
+     allow_headers=["Content-Type"],  
+     supports_credentials=False)  
 
 # Load environment variables
 load_dotenv()
