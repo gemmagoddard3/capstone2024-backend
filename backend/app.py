@@ -11,6 +11,7 @@ import os
 # Initialize the Flask app
 app = Flask(__name__)
 cors_origins = [os.getenv("FRONT_END_ORIGIN")]
+print(f"Allowed CORS origins: {cors_origins}")
 CORS(app, origins=cors_origins)
 
 # Load environment variables
